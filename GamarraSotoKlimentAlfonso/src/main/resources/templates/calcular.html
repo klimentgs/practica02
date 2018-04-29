@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+<title>Calcular Renta</title>
+</head>
+<body>
+
+	<h1>Calculo de Renta de 5ta</h1>
+	<hr />
+	<div class="container">
+		<form action="#" th:action="@{/grabar}" th:object="${renta}"
+			th:method="post">
+
+			<table>
+				<tr>
+					<td>Nombre(s)</td>
+					<td><input id="nombres" th:field="*{nombres}" /></td>
+				</tr>
+				<tr>
+					<td>Apellidos</td>
+					<td><input id="apellidos" th:field="*{apellidos}" /></td>
+				</tr>
+			</table>
+			<hr/>
+			<table>
+				<tr>
+					<td>Proyección de ingresos brutos anuales</td>
+					<td>S/.</td>
+					<td><input id="ingresos" th:field="*{ingresos}" /></td>
+				</tr>
+				<tr>
+					<td>Monto de 7 UIT descontable</td>
+					<td>S/.</td>
+					<td><span id="uitdescontable" th:text="*{uitdescontable}"></span></td>
+				</tr>
+				<tr>
+					<td>Renta neta gravable de impuesto de quinta</td>
+					<td>S/.</td>
+					<td><input id="rentagravable" th:field="*{rentagravable}" /></td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td>Retención Mensual aproximada que se realiza al trabajador</td>
+					<td>S/.</td>
+					<td><input id="retencionmensual"
+						th:field="*{retencionmensual}" /></td>
+				</tr>
+				<tr>
+					<td>Unidad Impositiva Tributaria (UIT) del año en curso</td>
+					<td>S/.</td>
+					<td><span id="uit" th:text="*{uit}"></span></td>
+				</tr>
+			</table>
+			<hr />
+		<button type="submit" class="btn btn-success">Grabar</button>
+		<button type="reset" class="btn btn-warning">Limpiar</button>
+		</form>
+	</div>
+</body>
+</html>

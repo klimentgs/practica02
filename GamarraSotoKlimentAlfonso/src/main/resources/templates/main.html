@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Calcular Renta</title>
+</head>
+<body>
+
+	<h1>Rentas de 5ta</h1>
+	<br/>
+	<hr/>
+	<div>
+		<a href="#" th:href="@{'/calcular'}">Calcular Nuevo</a>
+	</div>
+	<br/>
+	<hr>
+	<div class="container">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Nombre(s)</th>
+					<th>Apellidos</th>
+					<th>Ingresos</th>
+					<th>M.Afecto Total</th>
+					<th>Impuestos Total</th>
+					<th>Renta gravable</th>
+					<th>Retención mensual</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="renta: ${rentas}">
+					<td><span th:text="${renta.nombres}"></span></td>
+					<td><span th:text="${renta.apellidos}"></span></td>
+					<td><span th:text="${renta.ingresos}"></span></td>
+					<td><span th:text="${renta.montoafectototal}"></span></td>
+					<td><span th:text="${renta.impuestototal}"></span></td>
+					<td><span th:text="${renta.rentagravable}"></span></td>
+					<td><span th:text="${renta.retencionmensual}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
